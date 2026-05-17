@@ -53,6 +53,8 @@ function changeCurrency() {
          currencyName.innerHTML = "Euro";
     }
 
+    convertCurrency();
+
 }
 
 selectCurrency.addEventListener("change", changeCurrency);
