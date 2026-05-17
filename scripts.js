@@ -27,16 +27,33 @@ function convertCurrency() {
         }).format(inputCurrencyValue / euroToday);
     }
 
-
     currencyValueToConvert.innerHTML = new  Intl.NumberFormat("pt-br", {
         style: "currency",
         currency: "BRL"
     }).format(inputCurrencyValue);
 
+}
+
+function changeCurrency() {
+    const currencyName = document.getElementById("currency-name");
+    const currencyImage = document.querySelector(".currency-img");
+
+    if(selectCurrency.value === "dolar") {
+        currencyImage.src = "./assets/dolar.png";
+    }
+
+    if(selectCurrency.value === "euro") {
+        currencyImage.src = "./assets/euro.png";
+    }
+
+    if(selectCurrency.value === "dolar") {
+        currencyName.innerHTML = "Dólar Americano";
+    }
+    if(selectCurrency.value === "euro") {
+         currencyName.innerHTML = "Euro";
+    }
 
 }
 
-
+selectCurrency.addEventListener("change", changeCurrency);
 convertButton.addEventListener("click", convertCurrency);
-
-
